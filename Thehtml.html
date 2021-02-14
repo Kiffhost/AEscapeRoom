@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h1 { 
+                font-size: 2vw;
+                color: #2049fd ;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                text-shadow: 2px 2px 4px #9090a0;
+            }
+
+            h2 {
+                color: #2049ff ;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                text-shadow: 1px 1px 2px #9090a0;
+            }
+
+            #heading {
+                color: #2049ff ;
+                text-align: center;
+            }
+
+            p {
+                color: #00509f;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+        </style>
+        <script>
+            function myFunction() {
+                var answer, output;
+                answer = document.getElementById('input').value;
+                if (answer == 'hint') {
+                    output = "I need to figure out the code word to escape this place...(ask for hint2 for more)";
+                } else if (answer == 'hint2') {
+                    output = "The objects in this picture must be clues, letters, perhaps? (ask for hint3 for more)";
+                } else if (answer == 'hint3') {
+                    output = "If I can figure out the letters, maybe there are clues for the order they are in too (hint4 for more help, cardhint if you know what type of cards)";
+                } else if (answer == 'hint4') {
+                    output = "Perhaps the phonetic alphabet might help, and maybe there are other clues written small on the objects? I doubt the code word would be very long...";
+                } else if (answer == 'cardhint') {
+                    output = "When people think of tarot cards, they often think of the Major Arcana. The famous ones, all of which are numbered...";
+                } else if (answer == 'tango') {
+                    output = "This is definitely something, let's keep looking...";
+                } else if (answer == 'alpha') {
+                    output = "Maybe this is important? Each page of the notebook is titled 'To: Alpha'.";
+                } else if (answer == 'oscar') {
+                    output = "That fish in the corner is called Oscar. Is that a clue?";
+                } else if (answer == 'romeo') {
+                    output = "We must be getting close now, that was really outside the box!";
+                } else if (answer == 'tarot') {
+                    output = "Of course! Tarot, like those cards in the corner. But there are so many, which one could it be?";
+                } else if (answer == 'lovers') {
+                    output = "You did it! You escaped!"
+                    document.getElementById('hooray').removeAttribute('hidden')
+                } else if (answer == 'answer') {
+                    output = "Good try, not so easy. :p"
+                } else {
+                    output = "";
+                }
+
+                document.getElementById('output').innerHTML = output;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Welcome to the Escape Room</h1>
+        <p>
+            Search the image for clues, and find the code word to escape. <br>
+            Type lowercase words into the text box for hints (maybe start with hint), and to check your progress. <br>
+            Google may be necessary for some of the clues. If the website isn't behaving well, its Felix's fault. <br>
+            Good luck!
+        </p>
+        <img src = 'E:\AliceEscape1080.png'>
+        <input type='text' id='input' value="Type answer here" onkeyup="myFunction()">
+        <h2 id="output"></h2>
+        <button hidden='hidden' id='hooray' onclick=document.getElementById('victorybears').removeAttribute('hidden')>Hooray!!</button>
+        <img src='https://media.tenor.com/images/3a32e8935a229fa7c16ece23b36abde3/tenor.gif' hidden='hidden' id='victorybears'>
+    </body>
+</html>
